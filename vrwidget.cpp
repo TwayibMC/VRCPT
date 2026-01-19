@@ -5,7 +5,8 @@
 #include "vrsphericalcamera.h"
 #include "vrtorus.h"
 #include "vrhelix.h"
-
+#include "vrbounce.h"
+#include <cmath>
 
 
 
@@ -85,7 +86,10 @@ void VRWidget::update()
 
     if (animate) {
         scene.update(t, true);
-        world->setPosition(trajectory->pos(t2*0.001));
+        double elapsedSeconds = t2 * 0.001;
+        double bounceDuration = trajectory->getMaxT();
+        double bounceTime = bounceDuration > 0.0 ? std::fmod(elapsedSeconds, bounceDuration) : elapsedSeconds;
+        world->setPosition(trajectory->pos(bounceTime));
     }
 
     QOpenGLWidget::update();
@@ -179,7 +183,7 @@ void VRWidget::initializeGL()
 
     world = new VRSphere();
     world->setCamera(camera);
-    world->translate(QVector3D(0, 1, 0));
+    world->setPosition(QVector3D(0, 0, 0));
     world->setTexture(":/textures/2k_earth_daymap");
     world->initialize();
     world->setLight(light);
@@ -207,10 +211,9 @@ void VRWidget::initializeGL()
     skybox->initialize();
     scene.append(skybox);
 
-    trajectory = new VRHelix();
+    trajectory = new VRBounce(3.0, 1.2);
     trajectory->setCamera(camera);
     trajectory->setPosition(QVector3D(0, 0, 0));
-    trajectory->setScale(2);
     trajectory->initialize();
     scene.append(trajectory);
 

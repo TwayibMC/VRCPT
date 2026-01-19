@@ -10,8 +10,8 @@ public:
     VRCamera();
     virtual ~VRCamera();
 
-    QMatrix4x4 viewMatrix();
-    QMatrix4x4 projectionMatrix();
+    virtual QMatrix4x4 viewMatrix();
+    virtual QMatrix4x4 projectionMatrix();
 
     float getFov() const;
     void setFov(float newFov);
