@@ -1,0 +1,3 @@
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\TP6.dir/objects.a
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\TP6.dir/objects.a @CMakeFiles\TP6.dir\objects1.rsp
+C:\Qt\Tools\mingw1310_64\bin\g++.exe -DQT_QML_DEBUG -g -Wl,--whole-archive CMakeFiles\TP6.dir/objects.a -Wl,--no-whole-archive -o TP6.exe -Wl,--out-implib,libTP6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TP6.dir\linkLibs.rsp

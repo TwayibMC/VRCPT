@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/shaders">
+        <file>FS_simple.fsh</file>
+        <file>VS_simple.vsh</file>
+        <file>VS_simpler.vsh</file>
+        <file>FS_plan.fsh</file>
+        <file>VS_simple_texture.vsh</file>
+        <file>FS_simple_texture.fsh</file>
+        <file>FS_plan_texture.fsh</file>
+        <file>FS_planet_texture.fsh</file>
+        <file>VS_cube_texture.vsh</file>
+        <file>FS_cube_texture.fsh</file>
+        <file>FS_checker_texture.fsh</file>
+        <file>VS_skybox_texture.vsh</file>
+        <file>FS_skybox_texture.fsh</file>
+        <file>FS_lit_checker.fsh</file>
+        <file>FS_lit_texture.fsh</file>
+        <file>VS_lit_texture.vsh</file>
+        <file>VS_lit_texture_cube.vsh</file>
+        <file>VS_lit_simple.vsh</file>
+        <file>FS_lit_simple.fsh</file>
+        <file>VS_heightmap.vsh</file>
+    </qresource>
+    <qresource prefix="/textures">
+        <file>wood.png</file>
+        <file>2k_earth_daymap.jpg</file>
+        <file>2k_earth_nightmap.jpg</file>
+        <file>container.jpg</file>
+        <file>dice_texture.jpg</file>
+        <file>polytech_logo.jpg</file>
+        <file>skybox/back.jpg</file>
+        <file>skybox/bottom.jpg</file>
+        <file>skybox/front.jpg</file>
+        <file>skybox/left.jpg</file>
+        <file>skybox/right.jpg</file>
+        <file>skybox/top.jpg</file>
+        <file>model/Geebee.jpg</file>
+        <file>model/GeeBee2.x</file>
+        <file>heightmap.png</file>
+        <file>terrain.jpg</file>
+        <file>pierre.jpg</file>
+        <file>brique.png</file>
+    </qresource>
+</RCC>
