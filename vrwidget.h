@@ -22,7 +22,8 @@
 #include "vrskybox.h"
 #include "vrcurve.h"
 
-
+class VRSphere;
+class VRHelix;
 class VRWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
@@ -47,9 +48,11 @@ private :
     VRSkybox* skybox;
     VRCamera* camera;
     VRLight *light;
+    VRSphere* lightSphere;
     QTime startTime;
     QTime lastTime;
     VRCurve* trajectory;
+    VRHelix* lightTrajectory;
 
 public slots:
     void startAnimation();

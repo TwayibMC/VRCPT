@@ -40,11 +40,16 @@ void VRPlane::draw()
     program.setUniformValue("u_Color", globalColor);
     program.setUniformValue("texture0", 0);
 
-    program.setUniformValue("light_ambient_color", QColor(100, 100, 100));
-    program.setUniformValue("light_diffuse_color", QColor(255, 255, 255));
-    program.setUniformValue("light_specular_color", QColor(255, 255, 255));
+    QColor ambientColor = light ? light->getAmbient() : QColor(100, 100, 100);
+    QColor diffuseColor = light ? light->getDiffuse() : QColor(255, 255, 255);
+    QColor specularColor = light ? light->getSpecular() : QColor(255, 255, 255);
+    QVector3D lightPosition = light ? light->getPosition() : QVector3D(10, 0, 10);
+
+    program.setUniformValue("light_ambient_color", ambientColor);
+    program.setUniformValue("light_diffuse_color", diffuseColor);
+    program.setUniformValue("light_specular_color", specularColor);
     program.setUniformValue("light_specular_strength", 20.0f);
-    program.setUniformValue("light_position", QVector3D(10, 0, 10));
+    program.setUniformValue("light_position", lightPosition);
     program.setUniformValue("eye_position", camera->getPosition());
 
     if (wireframe) {

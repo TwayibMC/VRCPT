@@ -165,6 +165,7 @@ void VRWidget::initializeGL()
     camera->setZMax(250);
 
     light = new VRLight();
+    light->setAmbient(QColor(255, 230, 200));
 
     body = new VRDice();
     body->setCamera(camera);
@@ -217,6 +218,18 @@ void VRWidget::initializeGL()
     trajectory->initialize();
     scene.append(trajectory);
 
+    lightTrajectory = new VRHelix(6.0, 0.0);
+    lightTrajectory->setNumWindings(1.0);
+    lightTrajectory->initialize();
+
+    lightSphere = new VRSphere(0.2);
+    lightSphere->setCamera(camera);
+    lightSphere->setLight(light);
+    lightSphere->setGlobalColor(light->getAmbient());
+    lightSphere->setPosition(light->getPosition());
+    lightSphere->initialize();
+    scene.append(lightSphere);
+
 
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     timer->start(30);
@@ -232,9 +245,28 @@ void VRWidget::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    //body->draw();
-    //plan->draw();
-    //world->draw();
-    //torus->draw();
-    scene.draw();
+    auto* stereoCamera = static_cast<VRStereoCamera*>(camera);
+
+    glColorMask(true, true, true, true);
+    stereoCamera->setCameraType(RV_CAMERA_MONO);
+    skybox->draw();
+
+    glColorMask(true, false, false, false);
+    stereoCamera->setCameraType(RV_CAMERA_LEFT);
+    foreach (VRBody* bodyItem, scene) {
+        if (bodyItem != skybox) {
+            bodyItem->draw();
+        }
+    }
+
+    glClear(GL_DEPTH_BUFFER_BIT);
+    glColorMask(false, true, true, false);
+    stereoCamera->setCameraType(RV_CAMERA_RIGHT);
+    foreach (VRBody* bodyItem, scene) {
+        if (bodyItem != skybox) {
+            bodyItem->draw();
+        }
+    }
+
+    glColorMask(true, true, true, true);
 }
