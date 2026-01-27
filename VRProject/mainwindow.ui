@@ -36,15 +36,22 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QPushButton" name="animationButton">
-          <property name="text">
-           <string>Animation</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
+        <widget class="QPushButton" name="animationButton">
+         <property name="text">
+          <string>Animation</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="stereoCheckBox">
+         <property name="text">
+          <string>Stéréo</string>
+         </property>
+        </widget>
+       </item>
         <item>
          <widget class="Line" name="line_2">
           <property name="orientation">
@@ -125,15 +132,20 @@
               </property>
              </item>
              <item>
-              <property name="text">
-               <string>Fixe</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Avion</string>
-              </property>
-             </item>
+             <property name="text">
+              <string>Fixe</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Subjective</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Avion</string>
+             </property>
+            </item>
             </widget>
            </item>
           </layout>
@@ -195,6 +207,7 @@
     <slot>changeSaturation(int)</slot>
     <slot>changeHeightFactor(int)</slot>
     <slot>changePositionCamera(QString)</slot>
+	<slot>changeStereo(bool)</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -213,6 +226,22 @@
     <hint type="destinationlabel">
      <x>411</x>
      <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+    <connection>
+   <sender>stereoCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>widgetRV</receiver>
+   <slot>changeStereo(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>414</x>
+     <y>337</y>
     </hint>
    </hints>
   </connection>

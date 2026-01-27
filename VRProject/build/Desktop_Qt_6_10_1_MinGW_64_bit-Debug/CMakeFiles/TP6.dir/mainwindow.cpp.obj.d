@@ -402,6 +402,9 @@ CMakeFiles/TP6.dir/mainwindow.cpp.obj: \
  C:/Qt/6.10.1/mingw_64/include/QtGui/qinputmethod.h \
  C:/Qt/6.10.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.10.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.10.1/mingw_64/include/QtWidgets/QCheckBox \
+ C:/Qt/6.10.1/mingw_64/include/QtWidgets/qcheckbox.h \
+ C:/Qt/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/QComboBox \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qcombobox.h \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -440,7 +443,6 @@ CMakeFiles/TP6.dir/mainwindow.cpp.obj: \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qmenu.h \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qpushbutton.h \
- C:/Qt/6.10.1/mingw_64/include/QtWidgets/qabstractbutton.h \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/QSlider \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qslider.h \
  C:/Qt/6.10.1/mingw_64/include/QtWidgets/QSpacerItem \

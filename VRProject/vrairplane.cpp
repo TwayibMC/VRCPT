@@ -36,7 +36,14 @@ void VRAirplane::update(float time, bool relative)
     // 1. Stabilisation des ailes (Roulis)
     // On réduit le facteur à 1.2f pour ne pas bloquer les virages du joueur
     if (qAbs(rightWing.y()) > 0.01f) {
-        this->rotate(-rightWing.y() * 1.2f, QVector3D(0, 0, 1));
+        float rollCorrection = -rightWing.y() * 1.2f;
+        VRBody::rotate(rollCorrection, QVector3D(0, 0, 1));
+        for (int i = 0; i < meshes.size(); ++i) {
+            if (i == 2) {
+                continue;
+            }
+            meshes[i]->rotate(rollCorrection, QVector3D(0, 0, 1));
+        }
     }
 
     // 2. Stabilisation du nez (Tangage)

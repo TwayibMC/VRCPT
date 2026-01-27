@@ -69,6 +69,8 @@ private:
     QTimer* timer;
 
     bool animationOn = false;
+    bool stereoEnabled = false;
+    float eyeSeparation = 0.4f;
     QString position_camera = "Fixe";   // Correction de casse pour correspondre aux tests
 
     float angleY;
@@ -88,6 +90,7 @@ public slots:
     void changeWireframe();
     void changeHeightFactor(int newFactor);
     void changePositionCamera(QString newPos);
+    void changeStereo(bool enabled);
 
 signals:
     void displayVelocity(double);

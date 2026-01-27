@@ -67,6 +67,13 @@ void VRWidget::update()
             camera->setPosition(QVector3D(0,0,0));
             camera->setTarget(QVector3D(0, 0, -1));
         }
+        else if(position_camera == "Subjective"){
+            QVector3D forward = or_avion.rotatedVector(QVector3D(0, 0, -1));
+            QVector3D cockpitOffset = or_avion.rotatedVector(QVector3D(0.0f, 0.4f, 0.0f));
+            QVector3D camPos = pos_avion + cockpitOffset + forward * 5.0f;
+            camera->setPosition(camPos);
+            camera->setTarget(camPos + forward * 5.0f);
+        }
     }
 
     emit displayVelocity(avion->getVelocity());
@@ -143,7 +150,36 @@ void VRWidget::initializeGL()
 void VRWidget::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    if (!stereoEnabled) {
+        glViewport(0, 0, width(), height());
+        scene.draw();
+        return;
+    }
+
+    QVector3D originalPos = camera->getPosition();
+    QVector3D originalTarget = camera->getTarget();
+    float originalAspect = camera->getAspect();
+
+    QVector3D forward = (originalTarget - originalPos).normalized();
+    QVector3D right = QVector3D::crossProduct(forward, camera->getUp()).normalized();
+    float halfSeparation = eyeSeparation * 0.5f;
+
+    int halfWidth = width() / 2;
+    camera->setAspect(static_cast<float>(halfWidth) / height());
+
+    camera->setPosition(originalPos - right * halfSeparation);
+    camera->setTarget(originalTarget - right * halfSeparation);
+    glViewport(0, 0, halfWidth, height());
     scene.draw();
+
+    camera->setPosition(originalPos + right * halfSeparation);
+    camera->setTarget(originalTarget + right * halfSeparation);
+    glViewport(halfWidth, 0, halfWidth, height());
+    scene.draw();
+
+    camera->setPosition(originalPos);
+    camera->setTarget(originalTarget);
+    camera->setAspect(originalAspect);
 
 }
 
@@ -196,6 +232,7 @@ void VRWidget::resizeGL(int w, int h)
 
 void VRWidget::changeFov(int fov) { camera->setFov(fov); }
 void VRWidget::changeHeightFactor(int factor) { if(plane) dynamic_cast<VRTerrain*>(plane)->setHeightFactor(factor); }
+void VRWidget::changeStereo(bool enabled) { stereoEnabled = enabled; }
 void VRWidget::mousePressEvent(QMouseEvent *event) { oldPos = event->position(); }
 void VRWidget::mouseMoveEvent(QMouseEvent *event) {
     float dx = (event->position().x() - oldPos.x()) / width();
