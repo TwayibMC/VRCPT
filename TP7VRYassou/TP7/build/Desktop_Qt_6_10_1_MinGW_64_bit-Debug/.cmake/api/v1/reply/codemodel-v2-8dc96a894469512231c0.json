@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "RVTP7",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "RVTP7::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RVTP7-Debug-1e3884aba0c90fbd8737.json",
+					"name" : "RVTP7",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RVTP7_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RVTP7_autogen-Debug-8151aab17d0a5d3ef388.json",
+					"name" : "RVTP7_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RVTP7_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RVTP7_autogen_timestamp_deps-Debug-6ba50cc52787882ebb79.json",
+					"name" : "RVTP7_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/shaders">
+        <file>VS_simpler.vsh</file>
+        <file>VS_simple_texture.vsh</file>
+        <file>FS_simple_texture.fsh</file>
+        <file>FS_lit_checker.fsh</file>
+        <file>FS_lit_texture.fsh</file>
+        <file>VS_lit_texture.vsh</file>
+        <file>VS_lit_simple.vsh</file>
+        <file>FS_lit_simple.fsh</file>
+    </qresource>
+    <qresource prefix="/textures">
+        <file>wood.png</file>
+    </qresource>
+</RCC>

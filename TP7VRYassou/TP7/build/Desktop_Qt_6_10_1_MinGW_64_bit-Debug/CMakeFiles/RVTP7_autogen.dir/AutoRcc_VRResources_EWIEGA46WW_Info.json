@@ -1,0 +1,33 @@
+{
+	"BUILD_DIR" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/RVTP7_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7",
+	"CMAKE_SOURCE_DIR" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "MinGW Makefiles",
+	"INCLUDE_DIR" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/RVTP7_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/FS_lit_checker.fsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/FS_lit_simple.fsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/FS_lit_texture.fsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/VS_simple_texture.vsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/VS_lit_simple.vsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/FS_simple_texture.fsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/VS_lit_texture.vsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/VS_simpler.vsh",
+		"C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/wood.png"
+	],
+	"LOCK_FILE" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/RVTP7_autogen.dir/AutoRcc_VRResources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "VRResources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_VRResources.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.10.1/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/RVTP7_autogen.dir/AutoRcc_VRResources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/Users/siham/OneDrive/Bureau/TP7VR/TP7/VRResources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}
