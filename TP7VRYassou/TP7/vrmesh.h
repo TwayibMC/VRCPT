@@ -14,6 +14,7 @@ public:
 
     void setVertices(QVector<VRVertex> *vertices);
     void setIndices(QVector<uint> *indices);
+    QVector3D getLocalCenter() const;
 
 protected:
     QVector<VRVertex> *vertices;

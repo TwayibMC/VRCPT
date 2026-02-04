@@ -1,5 +1,7 @@
 #include "vrmesh.h"
 
+#include <limits>
+
 VRMesh::VRMesh()
     :VRBody()
 {
@@ -23,6 +25,30 @@ void VRMesh::setIndices(QVector<uint> *indices)
 {
     this->indices = indices;
     numIndices = this->indices->length();
+}
+
+QVector3D VRMesh::getLocalCenter() const
+{
+    if (!vertices || vertices->isEmpty()) {
+        return QVector3D();
+    }
+    float minX = std::numeric_limits<float>::max();
+    float minY = std::numeric_limits<float>::max();
+    float minZ = std::numeric_limits<float>::max();
+    float maxX = std::numeric_limits<float>::lowest();
+    float maxY = std::numeric_limits<float>::lowest();
+    float maxZ = std::numeric_limits<float>::lowest();
+
+    for (const VRVertex &vertex : *vertices) {
+        minX = std::min(minX, vertex.position.x());
+        minY = std::min(minY, vertex.position.y());
+        minZ = std::min(minZ, vertex.position.z());
+        maxX = std::max(maxX, vertex.position.x());
+        maxY = std::max(maxY, vertex.position.y());
+        maxZ = std::max(maxZ, vertex.position.z());
+    }
+
+    return QVector3D((minX + maxX) * 0.5f, (minY + maxY) * 0.5f, (minZ + maxZ) * 0.5f);
 }
 
 void VRMesh::initializeBuffer()

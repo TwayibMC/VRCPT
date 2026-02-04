@@ -137,8 +137,10 @@ QMatrix4x4 VRBody::modelMatrix()
 {
     QMatrix4x4 model;
     model.translate(position);
+    model.translate(origin);
     model.rotate(orientation);
     model.scale(scale);
+    model.translate(-origin);
     return model;
 }
 
