@@ -196,6 +196,7 @@ QMatrix4x4 VRModel::modelMatrix()
 {
     QMatrix4x4 model;
     model.translate(position);
+    model.translate(origin);
     model.rotate(orientation);
     model.scale(scale);
     model.translate(-origin);

@@ -29,7 +29,7 @@ void VRWidget::update()
     if(typeCam == "subjective"){
         if (isJumping && !isCrouched){
             up = camera2->jump(50,90,up);
-            if ((camera->getPosition()).y() == 50){
+            if ((camera2->getPosition()).y() == 50){
                 isJumping = false;
             }
         }
@@ -132,21 +132,20 @@ void VRWidget::initializeGL()
     torus->setLight(light);
     torus->initialize();
 
+    camera3 = new VRSphericalCamera();
+    camera3->setFov(60.0f);
+    camera3->setZMin(8);
+    camera3->setZMax(1000);
+
     avion = new VRAirplane();
     avion->setCamera(camera3);
     avion->setLight(light);
     avion->initialize();
     avion->translate(QVector3D(0,20,-20));
 
-    camera3 = new VRSphericalCamera();
-    camera3->setFov(60.0f);
-    camera3->setZMin(8);
-    camera3->setZMax(1000);
-
     bb8 = new VRBB8();
     bb8->setCamera(camera);
     bb8->setPosition(QVector3D(0, 0, -100));
-    bb8->setOrigin(QVector3D(-20,60,0));
     bb8->setLight(light);
     bb8->setScale(0.4f);
     bb8->initialize();
@@ -230,7 +229,7 @@ void VRWidget::mouseMoveEvent(QMouseEvent *event)
             cam->setPhi(cam->getPhi() + dy);
             cam->setTheta(cam->getTheta() + dx);
         }
-        else{
+        else if(typeCam == "avion"){
             VRSphericalCamera* cam3 = (VRSphericalCamera*)camera3;
             cam3->setPhi(cam3->getPhi() + dy);
             cam3->setTheta(cam3->getTheta() + dx);
